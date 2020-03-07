@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://nicholas2015.github.io</id>
     <title>尼古拉斯的博客</title>
-    <updated>2020-03-07T05:14:29.885Z</updated>
+    <updated>2020-03-07T05:15:39.553Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://nicholas2015.github.io"/>
     <link rel="self" href="https://nicholas2015.github.io/atom.xml"/>
@@ -16,6 +16,33 @@
         <link href="https://nicholas2015.github.io/post/git-ben-di-xiang-mu-shang-chuan/">
         </link>
         <updated>2020-03-07T03:51:59.000Z</updated>
+        <content type="html"><![CDATA[<p>1、（先进入项目文件夹）通过命令 git init 把这个目录变成git可以管理的仓库</p>
+<pre><code class="language-bash">git init
+</code></pre>
+<p>2、把文件添加到版本库中，使用命令 git add .添加到暂存区里面去，不要忘记后面的小数点“.”，意为添加文件夹下的所有文件</p>
+<pre><code class="language-bash">git add .
+</code></pre>
+<p>3、用命令 git commit告诉Git，把文件提交到仓库。引号内为提交说明</p>
+<pre><code class="language-bash">git commit -m 'first commit'
+</code></pre>
+<p>4、关联到远程库</p>
+<pre><code class="language-bash">git remote add origin 你的远程库地址
+</code></pre>
+<p>如：</p>
+<pre><code class="language-bash">git remote add origin https://github.com/xxx/xxx-demo.git
+</code></pre>
+<p>5、获取远程库与本地同步合并（如果远程库不为空必须做这一步，否则后面的提交会失败）</p>
+<pre><code class="language-bash">git pull --rebase origin master
+</code></pre>
+<p>6、把本地库的内容推送到远程，使用 git push命令，实际上是把当前分支master推送到远程。执行此命令后会要求输入用户名、密码，验证通过后即开始上传。</p>
+<pre><code class="language-bash">git push -u origin master
+</code></pre>
+<p>7、状态查询命令</p>
+<pre><code class="language-bash">git status
+</code></pre>
+<p>备：详细请参考 http://www.cnblogs.com/tugenhua0707/p/4050072.html<br>
+<img src="https://images2018.cnblogs.com/blog/359884/201711/359884-20171128123923050-1074438610.png" alt="img" loading="lazy"></p>
+]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[Spring框架简介]]></title>
@@ -23,6 +50,129 @@
         <link href="https://nicholas2015.github.io/post/spring-kuang-jia-jian-jie/">
         </link>
         <updated>2020-03-07T03:51:07.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="spring-framework-overview">Spring Framework Overview</h1>
+<h1 id="spring框架简介">Spring框架简介</h1>
+<p>Spring makes it easy to create Java enterprise applications. It provides everything you<br>
+need to embrace the Java language in an enterprise environment, with support for Groovy<br>
+and Kotlin as alternative languages on the JVM, and with the flexibility to create many<br>
+kinds of architectures depending on an application's needs. As of Spring Framework 5.1,<br>
+Spring requires JDK 8+ (Java SE 8+) and provides out-of-the-box support for JDK 11 LTS.<br>
+Java SE 8 update 60 is suggested as the minimum patch release for Java 8, but it is<br>
+generally recommended to use a recent patch release.</p>
+<p>Spring使得Java企业应用开发变得简单。它提供了在企业环境中使用Java语言所需要的一切并且可以根据应用的需求灵活的构建多种架构，同时也支持Groovy和Kotlin这些基于JVM使用的替代语言。从Spring框架5.1开始，使用Spring需要JDK8+（Java SE 8+）版本并且也提供了对JDK11 LTS版本的支持。建议将Java SE8第60个更新版本作为使用Java8的最小修订版本，但是通常推荐使用最新修订版。</p>
+<p>Spring supports a wide range of application scenarios. In a large enterprise, applications<br>
+often exist for a long time and have to run on a JDK and application server whose upgrade<br>
+cycle is beyond developer control. Others may run as a single jar with the server embedded,<br>
+possibly in a cloud environment. Yet others may be standalone applications (such as batch<br>
+or integration workloads) that do not need a server.</p>
+<p>Spring支持广泛的应用场景。在大型企业中，通常应用程序是长时间存在并且运行在一个更新周期不受开发人员控制的JDK和应用服务器上。其他的可能就是运行在内嵌服务器或者云环境上的一个独立jar。还有一些可能就是不需要服务器的独立应用程序(比如批处理或者集成负载)。</p>
+<p>Spring is open source. It has a large and active community that provides continuous feedback<br>
+based on a diverse range of real-world use cases. This has helped Spring to successfully<br>
+evolve over a very long time.</p>
+<p>Spring是开源项目，它拥有一个庞大且活跃的社区，并且能够从各种实际使用案例中得到持续的反馈。这也是在Spring在长期发展中走向成功的原因。</p>
+<h2 id="what-we-mean-by-spring">What We Mean by &quot;Spring&quot;</h2>
+<h2 id="我们所说的spring是什么">我们所说的“Spring”是什么？</h2>
+<p>The term &quot;Spring&quot; means different things in different contexts. It can be used to refer to<br>
+the Spring Framework project itself, which is where it all started. Over time, other Spring<br>
+projects have been built on top of the Spring Framework. Most often, when people say<br>
+&quot;Spring&quot;, they mean the entire family of projects. This reference documentation focuses on<br>
+the foundation: the Spring Framework itself.</p>
+<p>“Spring”一词在不同的上下中代表的含义不尽相同。它可以代表着Spring Framework项目本身，也可以说是它一切的开始。随着时间的推移，也有很多其他的Spring项目在Spring Framework基础上开发出来。通常人们所说的“Spring”代表的是整个项目系列。本参考文档重点关注的是Spring框架自身。</p>
+<p>The Spring Framework is divided into modules. Applications can choose which modules they need.<br>
+At the heart are the modules of the core container, including a configuration model and a<br>
+dependency injection mechanism. Beyond that, the Spring Framework provides foundational<br>
+support for different application architectures, including messaging, transactional data and<br>
+persistence, and web. It also includes the Servlet-based Spring MVC web framework and, in<br>
+parallel, the Spring WebFlux reactive web framework.</p>
+<p>Spring框架被分成了多个模块，应用程序可以在使用时选择他们所需要的模块。核心容器的核心模块包含配置模式以及依赖注入机制。除此之外，Spring框架还提供了对不同应用架构的功能支持，包括消息传递、数据事务和持久化以及WEB。它还包含了基于Servlet的SpringMVC Web框架以及与之并行存在Spring WebFlux响应式Web框架。</p>
+<p>A note about modules: Spring's framework jars allow for deployment to JDK 9's module path<br>
+(&quot;Jigsaw&quot;). For use in Jigsaw-enabled applications, the Spring Framework 5 jars come with<br>
+&quot;Automatic-Module-Name&quot; manifest entries which define stable language-level module names<br>
+(&quot;spring.core&quot;, &quot;spring.context&quot; etc) independent from jar artifact names (the jars follow<br>
+the same naming pattern with &quot;-&quot; instead of &quot;.&quot;, e.g. &quot;spring-core&quot; and &quot;spring-context&quot;).<br>
+Of course, Spring's framework jars keep working fine on the classpath on both JDK 8 and 9+.</p>
+<p>关于模块化注意点：Spring框架支持部署到JDK9的模块化路径(&quot;Jigsaw&quot;)。为了在启用Jigsaw的应用程序中使用，在Spring5的jar中加入了“Automatic-Module-Name”清单列表用于定义独立于jar包名（这些jar遵循着相同的命名模式：使用“-”代替“.”,如：&quot;spring-core&quot;和&quot;spring-context&quot;）的标准语言级别的模块化名称（比如&quot;spring.core&quot;和&quot;spring.context&quot;）。当然，Spring框架jar在JDK8和JDK9+类路径上很好的运行。</p>
+<h2 id="design-philosophy">Design Philosophy</h2>
+<h2 id="设计原理">设计原理</h2>
+<p>When you learn about a framework, it’s important to know not only what it does but what<br>
+principles it follows. Here are the guiding principles of the Spring Framework:</p>
+<p>当学习一个框架时，很重要的一点是不仅要了解它的原理也要遵循它的设计原则。以下是Spring框架的指导原则。</p>
+<ul>
+<li>
+<p>Provide choice at every level. Spring lets you defer design decisions as late as possible.<br>
+For example, you can switch persistence providers through configuration without changing<br>
+your code. The same is true for many other infrastructure concerns and integration with<br>
+third-party APIs.</p>
+</li>
+<li>
+<p>Accommodate diverse perspectives. Spring embraces flexibility and is not opinionated<br>
+about how things should be done. It supports a wide range of application needs with<br>
+different perspectives.</p>
+</li>
+<li>
+<p>Maintain strong backward compatibility. Spring’s evolution has been carefully managed<br>
+to force few breaking changes between versions. Spring supports a carefully chosen range<br>
+of JDK versions and third-party libraries to facilitate maintenance of applications and<br>
+libraries that depend on Spring.</p>
+</li>
+<li>
+<p>Care about API design. The Spring team puts a lot of thought and time into making APIs<br>
+that are intuitive and that hold up across many versions and many years.</p>
+</li>
+<li>
+<p>Set high standards for code quality. The Spring Framework puts a strong emphasis on<br>
+meaningful, current, and accurate javadoc. It is one of very few projects that can claim<br>
+clean code structure with  no circular dependencies between packages.</p>
+</li>
+<li>
+<p>提供各个级别的选择。Spring使你尽可能的推迟你的设计决策。比如：你可以在不改变代码的情况通过切换配置提供功能的持久化。对于许多其他的基础架构问题以及与第三方API集成也是一样的。</p>
+</li>
+<li>
+<p>多角度兼容。Spring具有灵活性且不去限制你该怎么去做，支持具有不同视角的广泛应用需求。</p>
+</li>
+<li>
+<p>强大的向后兼容性。Spring的演变是被精心管理的，所有版本之间没有重大的变化。Spring支持精心选择的JDK版本以及第三方库，以方便维护依赖于Spring的应用和第三方库。</p>
+</li>
+<li>
+<p>重视API设计。Spring团队在设计API上投入了大量的思考和时间，使其能够容易理解以及能够在多版本中长久的支持。</p>
+</li>
+<li>
+<p>高标准的代码质量。Spring框架强调javadoc要有意义、保持最新以及含义准确。Spring框架可以自豪的说，它是极少具有代码结构简洁并且包之间没有循环依赖的项目之一。</p>
+</li>
+</ul>
+<h2 id="feedback-and-contributions">Feedback and Contributions</h2>
+<h2 id="反馈与贡献">反馈与贡献</h2>
+<p>For how-to questions or diagnosing or debugging issues, we suggest using StackOverflow,<br>
+and we have a https://spring.io/questions[questions page] that lists the suggested tags to use.<br>
+If you're fairly certain that there is a problem in the Spring Framework or would like<br>
+to suggest a feature, please use the https://github.com/spring-projects/spring-framework/issues[GitHub Issues].</p>
+<p>对于如何提问、诊断以及调试之类的问题，我们建议使用StackOverflow，以及我们的 https://spring.io/questions[问题页面] 列出了一些使用建议标签。如果你非常确定Spring框架存在问题或者你想提出一些新功能，请到 https://github.com/spring-projects/spring-framework/issues[GitHub Issues]反馈。</p>
+<p>If you have a solution in mind or a suggested fix, you can submit a pull request on<br>
+https://github.com/spring-projects/spring-framework[Github]. However, please keep in mind<br>
+that, for all but the most trivial issues, we expect a ticket to be filed in the issue<br>
+tracker, where discussions take place and leave a record for future reference.</p>
+<p>如果您有解决方案或者建议的解决方案，你可以到 https://github.com/spring-projects/spring-framework[Github]提交你的需求。但是请记住，除了一些琐碎的问题，我们希望将问题的讨论记录在问题追踪中，以备将来作参考。</p>
+<p>For more details see the guidelines at the<br>
+https://github.com/spring-projects/spring-framework/blob/master/CONTRIBUTING.md[CONTRIBUTING],<br>
+top-level project page.</p>
+<p>有关更多的详细信息，请参考顶级项目页面的指南 https://github.com/spring-projects/spring-framework/blob/master/CONTRIBUTING.md[CONTRIBUTING]。</p>
+<h2 id="getting-started">Getting Started</h2>
+<h2 id="入门">入门</h2>
+<p>If you are just getting started with Spring, you may want to begin using the Spring<br>
+Framework by creating a https://projects.spring.io/spring-boot/[Spring Boot]-based<br>
+application. Spring Boot provides a quick (and opinionated) way to create a<br>
+production-ready Spring-based application. It is based on the Spring Framework, favors<br>
+convention over configuration, and is designed to get you up and running as quickly<br>
+as possible.</p>
+<p>如果你刚刚开始使用Spring，你可能需要使用基于 https://projects.spring.io/spring-boot/[Spring Boot]来创建一个Spring项目。Spring Boot提供了一个快速（且便捷）的方式来构建一个基于Spring的生产应用。它基于Spring框架并且旨在让你能够快速上手运行一个项目，更倾向于约定优于配置。</p>
+<p>You can use https://start.spring.io/[start.spring.io] to generate a basic project or follow<br>
+one of the https://spring.io/guides[&quot;Getting Started&quot; guides], such as<br>
+https://spring.io/guides/gs/rest-service/[Getting Started Building a RESTful Web Service].<br>
+As well as being easier to digest, these guides are very task focused, and most of them<br>
+are based on Spring Boot. They also cover other projects from the Spring portfolio that<br>
+you might want to consider when solving a particular problem.</p>
+<p>你可以使用 https://start.spring.io/[start.spring.io] 生成一个基础项目工程或者根据以下指南 https://spring.io/guides[&quot;Getting Started&quot; guides]操作，比如： https://spring.io/guides/gs/rest-service/[Getting Started Building a RESTful Web Service]。这些指南大多数是基于Spring Boot开发的，非常注重操作并且易于上手。他们还包含了Spring工程系列中的其他项目，你在解决问题可能需要考虑到他们。</p>
+]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[mysql免安装版配置与安装]]></title>
@@ -30,6 +180,53 @@
         <link href="https://nicholas2015.github.io/post/mysql-mian-an-zhuang-ban-pei-zhi-yu-an-zhuang/">
         </link>
         <updated>2020-03-07T03:42:31.000Z</updated>
+        <content type="html"><![CDATA[<ol>
+<li>
+<p>解压压缩包，并新建my.ini文件以代替my-default.ini文件</p>
+</li>
+<li>
+<p>MYSQL<a href="https://dev.mysql.com/downloads/mysql/5.7.html#downloads">下载mysql5.7</a>，解压压缩包，并在解压后的根目录新建my.ini文件以代替my-default.ini文件</p>
+</li>
+<li>
+<p>my.ini文件内容如下:</p>
+<pre><code class="language-ini">[mysql]
+#设置mysql客户端默认字符集
+default-character-set=utf8
+[mysqld]
+#设置3306端口
+port = 3306 
+#设置mysql的安装目录
+basedir=D:\\Program Files\\Mysql
+#设置mysql数据库的数据的存放目录
+datadir=D:\\Program Files\\Mysql\\data
+#允许最大连接数
+max_connections=200
+#服务端使用的字符集默认为8比特编码的latin1字符集
+character-set-server=utf8
+#创建新表时将使用的默认存储引擎
+default-storage-engine=INNODB 
+</code></pre>
+</li>
+<li>
+<p>使用管理员身份打开cmd命令窗口，进入到安装目录bin目录，执行命令：</p>
+<pre><code class="language-shell"># 执行如下命令，并回车，此时mysql安装目录下已经自动创建了data文件夹。
+mysqld --initialize-insecure --user=mysql
+</code></pre>
+</li>
+<li>
+<p>bin目录下继续输入：</p>
+<pre><code class="language-shell"># 安装mysql服务，此处注意：是mysqld不是mysql
+mysqld install
+</code></pre>
+</li>
+<li>
+<p>服务启动后 ，以root用户连接mysql，初始密码为空，直接enter进入</p>
+<pre><code class="language-shell"># 修改root用户密码  执行：
+alter user 'root'@'localhost' identified by '新密码'
+</code></pre>
+</li>
+</ol>
+]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[kubernetes环境搭建]]></title>
@@ -37,6 +234,79 @@
         <link href="https://nicholas2015.github.io/post/kubernetes-huan-jing-da-jian/">
         </link>
         <updated>2020-03-07T03:37:36.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="1-环境搭建前期准备">1. 环境搭建前期准备</h2>
+<h3 id="组件版本">组件版本</h3>
+<ul>
+<li>Kubernetes 1.11.2</li>
+<li>Docker 18.06.0-ce</li>
+<li>Etcd v3.3.9</li>
+<li>Flanneld v0.10.0</li>
+<li>TLS 认证通信（所有组件，如etcd、kubernetes master 和node）</li>
+<li>RBAC 授权</li>
+<li>kubelet TLS Bootstrapping</li>
+<li>kubedns v1.14.10、dashboard v1.10.0、heapster v1.5.4等插件</li>
+</ul>
+<h3 id="etcd-集群-k8s-master-机器-k8s-node-机器">etcd 集群 &amp;&amp; k8s master 机器 &amp;&amp; k8s node 机器</h3>
+<ul>
+<li>master01：ip1</li>
+<li>node01: ip2</li>
+<li>node02: ip3</li>
+<li>node03: ip4</li>
+</ul>
+<h3 id="集群环境变量">集群环境变量</h3>
+<p>后续部署将会使用到的全局变量，定义如下（根据自己的机器、网络修改）：</p>
+<pre><code class="language-shell"># TLS Bootstrapping 使用的Token，可以使用命令 head -c 16 /dev/urandom | od -An -t x | tr -d ' ' 生成
+$ export BOOTSTRAP_TOKEN=&quot;8981b594122ebed7596f1d3b69c78223&quot;
+
+# 建议使用未用的网段来定义服务网段和Pod 网段
+# 服务网段(Service CIDR)，部署前路由不可达，部署后集群内部使用IP:Port可达
+$ export SERVICE_CIDR=&quot;10.254.0.0/16&quot;
+# Pod 网段(Cluster CIDR)，部署前路由不可达，部署后路由可达(flanneld 保证)
+$ export CLUSTER_CIDR=&quot;172.30.0.0/16&quot;
+
+# 服务端口范围(NodePort Range)
+$ export NODE_PORT_RANGE=&quot;30000-32766&quot;
+
+# etcd集群服务地址列表
+$ export ETCD_ENDPOINTS=&quot;https://ip1:2379,https://ip2:2379,https://ip3:2379&quot;
+
+# flanneld 网络配置前缀
+$ export FLANNEL_ETCD_PREFIX=&quot;/kubernetes/network&quot;
+
+# kubernetes 服务IP(预先分配，一般为SERVICE_CIDR中的第一个IP)
+$ export CLUSTER_KUBERNETES_SVC_IP=&quot;10.254.0.1&quot;
+
+# 集群 DNS 服务IP(从SERVICE_CIDR 中预先分配)
+$ export CLUSTER_DNS_SVC_IP=&quot;10.254.0.2&quot;
+
+# 集群 DNS 域名
+$ export CLUSTER_DNS_DOMAIN=&quot;cluster.local.&quot;
+
+# MASTER API Server 地址
+$ export MASTER_URL=&quot;k8s-api.virtual.local&quot;
+</code></pre>
+<h2 id="2-创建ca-证书和密钥">2. 创建CA 证书和密钥</h2>
+<p><code>kubernetes</code> 系统各个组件需要使用<code>TLS</code>证书对通信进行加密，这里我们使用<code>CloudFlare</code>的PKI 工具集<a href="https://pkg.cfssl.org/">cfssl</a> 来生成Certificate Authority(CA) 证书和密钥文件， CA 是自签名的证书，用来签名后续创建的其他TLS 证书。</p>
+<h3 id="安装-cfssl">安装 CFSSL</h3>
+<pre><code class="language-shell">$ wget https://pkg.cfssl.org/R1.2/cfssl_linux-amd64
+$ chmod +x cfssl_linux-amd64
+$ sudo mv cfssl_linux-amd64 /usr/k8s/bin/cfssl
+
+$ wget https://pkg.cfssl.org/R1.2/cfssljson_linux-amd64
+$ chmod +x cfssljson_linux-amd64
+$ sudo mv cfssljson_linux-amd64 /usr/k8s/bin/cfssljson
+
+$ wget https://pkg.cfssl.org/R1.2/cfssl-certinfo_linux-amd64
+$ chmod +x cfssl-certinfo_linux-amd64
+$ sudo mv cfssl-certinfo_linux-amd64 /usr/k8s/bin/cfssl-certinfo
+
+$ export PATH=/usr/k8s/bin:$PATH
+$ mkdir ssl &amp;&amp; cd ssl
+$ cfssl print-defaults config &gt; config.json
+$ cfssl print-defaults csr &gt; csr.json
+</code></pre>
+<p>借鉴于https://blog.qikqiak.com/post/manual-install-high-available-kubernetes-cluster</p>
+]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
@@ -49,6 +319,25 @@
 ]]></summary>
         <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
 ✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
+<!-- more -->
+<p><a href="https://github.com/getgridea/gridea">Github</a><br>
+<a href="https://gridea.dev/">Gridea 主页</a><br>
+<a href="http://fehey.com/">示例网站</a></p>
+<h2 id="特性">特性👇</h2>
+<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
+<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
+<p>🏷️  你可以对文章进行标签分组</p>
+<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
+<p>💻  你可以在 <strong>Windows</strong>，<strong>MacOS</strong> 或 <strong>Linux</strong> 设备上使用此客户端</p>
+<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
+<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
+<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
+<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
+<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
+<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前 🏃</p>
+<p>未来，它一定会成为你离不开的伙伴</p>
+<p>尽情发挥你的才华吧！</p>
+<p>😘 Enjoy~</p>
 ]]></content>
     </entry>
 </feed>
