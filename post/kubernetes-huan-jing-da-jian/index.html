@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>Hello Gridea | 尼古拉斯的博客</title>
+<title>kubernetes环境搭建 | 尼古拉斯的博客</title>
 <meta name="description" content="永不言弃&lt;br&gt;从来没有真正的绝境，只有心灵的迷途">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -81,45 +81,105 @@
       <div class="sm-12 md-8 col">
         <div class="paper">
           <article class="article">
-            <h1>Hello Gridea</h1>
+            <h1>kubernetes环境搭建</h1>
             <p class="article-meta">
-              2018-12-12
+              2020-03-07
               
-                <a href="https://nicholas2015.github.io/tag/jWoHBn4bW/" class="badge secondary">
-                  Gridea
+                <a href="https://nicholas2015.github.io/tag/QetU0dPRv/" class="badge success">
+                  kubernetes
                 </a>
               
             </p>
             
-              <img src="https://nicholas2015.github.io/post-images/hello-gridea.png" alt="Hello Gridea">
-            
             <div class="post-content">
-              <p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-<!-- more -->
-<p><a href="https://github.com/getgridea/gridea">Github</a><br>
-<a href="https://gridea.dev/">Gridea 主页</a><br>
-<a href="http://fehey.com/">示例网站</a></p>
-<h2 id="特性">特性👇</h2>
-<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
-<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
-<p>🏷️  你可以对文章进行标签分组</p>
-<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
-<p>💻  你可以在 <strong>Windows</strong>，<strong>MacOS</strong> 或 <strong>Linux</strong> 设备上使用此客户端</p>
-<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
-<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
-<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
-<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
-<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
-<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前 🏃</p>
-<p>未来，它一定会成为你离不开的伙伴</p>
-<p>尽情发挥你的才华吧！</p>
-<p>😘 Enjoy~</p>
+              <h2 id="1-环境搭建前期准备">1. 环境搭建前期准备</h2>
+<h3 id="组件版本">组件版本</h3>
+<ul>
+<li>Kubernetes 1.11.2</li>
+<li>Docker 18.06.0-ce</li>
+<li>Etcd v3.3.9</li>
+<li>Flanneld v0.10.0</li>
+<li>TLS 认证通信（所有组件，如etcd、kubernetes master 和node）</li>
+<li>RBAC 授权</li>
+<li>kubelet TLS Bootstrapping</li>
+<li>kubedns v1.14.10、dashboard v1.10.0、heapster v1.5.4等插件</li>
+</ul>
+<h3 id="etcd-集群-k8s-master-机器-k8s-node-机器">etcd 集群 &amp;&amp; k8s master 机器 &amp;&amp; k8s node 机器</h3>
+<ul>
+<li>master01：ip1</li>
+<li>node01: ip2</li>
+<li>node02: ip3</li>
+<li>node03: ip4</li>
+</ul>
+<h3 id="集群环境变量">集群环境变量</h3>
+<p>后续部署将会使用到的全局变量，定义如下（根据自己的机器、网络修改）：</p>
+<pre><code class="language-shell"># TLS Bootstrapping 使用的Token，可以使用命令 head -c 16 /dev/urandom | od -An -t x | tr -d ' ' 生成
+$ export BOOTSTRAP_TOKEN=&quot;8981b594122ebed7596f1d3b69c78223&quot;
+
+# 建议使用未用的网段来定义服务网段和Pod 网段
+# 服务网段(Service CIDR)，部署前路由不可达，部署后集群内部使用IP:Port可达
+$ export SERVICE_CIDR=&quot;10.254.0.0/16&quot;
+# Pod 网段(Cluster CIDR)，部署前路由不可达，部署后路由可达(flanneld 保证)
+$ export CLUSTER_CIDR=&quot;172.30.0.0/16&quot;
+
+# 服务端口范围(NodePort Range)
+$ export NODE_PORT_RANGE=&quot;30000-32766&quot;
+
+# etcd集群服务地址列表
+$ export ETCD_ENDPOINTS=&quot;https://ip1:2379,https://ip2:2379,https://ip3:2379&quot;
+
+# flanneld 网络配置前缀
+$ export FLANNEL_ETCD_PREFIX=&quot;/kubernetes/network&quot;
+
+# kubernetes 服务IP(预先分配，一般为SERVICE_CIDR中的第一个IP)
+$ export CLUSTER_KUBERNETES_SVC_IP=&quot;10.254.0.1&quot;
+
+# 集群 DNS 服务IP(从SERVICE_CIDR 中预先分配)
+$ export CLUSTER_DNS_SVC_IP=&quot;10.254.0.2&quot;
+
+# 集群 DNS 域名
+$ export CLUSTER_DNS_DOMAIN=&quot;cluster.local.&quot;
+
+# MASTER API Server 地址
+$ export MASTER_URL=&quot;k8s-api.virtual.local&quot;
+</code></pre>
+<h2 id="2-创建ca-证书和密钥">2. 创建CA 证书和密钥</h2>
+<p><code>kubernetes</code> 系统各个组件需要使用<code>TLS</code>证书对通信进行加密，这里我们使用<code>CloudFlare</code>的PKI 工具集<a href="https://pkg.cfssl.org/">cfssl</a> 来生成Certificate Authority(CA) 证书和密钥文件， CA 是自签名的证书，用来签名后续创建的其他TLS 证书。</p>
+<h3 id="安装-cfssl">安装 CFSSL</h3>
+<pre><code class="language-shell">$ wget https://pkg.cfssl.org/R1.2/cfssl_linux-amd64
+$ chmod +x cfssl_linux-amd64
+$ sudo mv cfssl_linux-amd64 /usr/k8s/bin/cfssl
+
+$ wget https://pkg.cfssl.org/R1.2/cfssljson_linux-amd64
+$ chmod +x cfssljson_linux-amd64
+$ sudo mv cfssljson_linux-amd64 /usr/k8s/bin/cfssljson
+
+$ wget https://pkg.cfssl.org/R1.2/cfssl-certinfo_linux-amd64
+$ chmod +x cfssl-certinfo_linux-amd64
+$ sudo mv cfssl-certinfo_linux-amd64 /usr/k8s/bin/cfssl-certinfo
+
+$ export PATH=/usr/k8s/bin:$PATH
+$ mkdir ssl &amp;&amp; cd ssl
+$ cfssl print-defaults config &gt; config.json
+$ cfssl print-defaults csr &gt; csr.json
+</code></pre>
+<p>借鉴于https://blog.qikqiak.com/post/manual-install-high-available-kubernetes-cluster</p>
 
             </div>
           </article>
         </div>
         <div class="paper" data-aos="fade-in">
+          
+            <div class="next-post">
+              <div class="next">
+                下一篇
+              </div>
+              <a href="https://nicholas2015.github.io/post/hello-gridea/">
+                <h3 class="post-title">
+                  Hello Gridea
+                </h3>
+              </a>
+            </div>
           
         </div>
         
@@ -195,19 +255,19 @@
     </div>
     <div class="row">
       
-        <a href="https://nicholas2015.github.io/tag/SDIfaskaa/" class="badge warning">
+        <a href="https://nicholas2015.github.io/tag/SDIfaskaa/" class="badge ">
           工具
         </a>
       
-        <a href="https://nicholas2015.github.io/tag/aNlLOlDIh/" class="badge secondary">
+        <a href="https://nicholas2015.github.io/tag/aNlLOlDIh/" class="badge success">
           Spring
         </a>
       
-        <a href="https://nicholas2015.github.io/tag/dI3XRiEcD/" class="badge success">
+        <a href="https://nicholas2015.github.io/tag/dI3XRiEcD/" class="badge secondary">
           数据库
         </a>
       
-        <a href="https://nicholas2015.github.io/tag/QetU0dPRv/" class="badge secondary">
+        <a href="https://nicholas2015.github.io/tag/QetU0dPRv/" class="badge ">
           kubernetes
         </a>
       

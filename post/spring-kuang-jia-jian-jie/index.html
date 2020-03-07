@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>Spring框架简介 | 尼古拉斯的博客</title>
+<meta name="description" content="永不言弃&lt;br&gt;从来没有真正的绝境，只有心灵的迷途">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="https://nicholas2015.github.io/favicon.ico?v=1583553178302">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://nicholas2015.github.io/styles/main.css">
+
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+  </head>
+  <body>
+  
+    <nav class="navbar border fixed split-nav">
+  <div class="nav-brand">
+    <h3><a href="https://nicholas2015.github.io">尼古拉斯的博客</a></h3>
+  </div>
+  <div class="collapsible">
+    <input id="collapsible1" type="checkbox" name="collapsible1">
+    <button>
+      <label for="collapsible1">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </label>
+    </button>
+    <div class="collapsible-body">
+      <ul class="inline">
+        
+          <li>
+            
+              <a href="/" class="menu">
+                首页
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/archives" class="menu">
+                归档
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/tags" class="menu">
+                标签
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/post/about" class="menu">
+                关于
+              </a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div id="top" class="row site">
+      <div class="sm-12 md-8 col">
+        <div class="paper">
+          <article class="article">
+            <h1>Spring框架简介</h1>
+            <p class="article-meta">
+              2020-03-07
+              
+                <a href="https://nicholas2015.github.io/tag/aNlLOlDIh/" class="badge ">
+                  Spring
+                </a>
+              
+            </p>
+            
+            <div class="post-content">
+              <h1 id="spring-framework-overview">Spring Framework Overview</h1>
+<h1 id="spring框架简介">Spring框架简介</h1>
+<p>Spring makes it easy to create Java enterprise applications. It provides everything you<br>
+need to embrace the Java language in an enterprise environment, with support for Groovy<br>
+and Kotlin as alternative languages on the JVM, and with the flexibility to create many<br>
+kinds of architectures depending on an application's needs. As of Spring Framework 5.1,<br>
+Spring requires JDK 8+ (Java SE 8+) and provides out-of-the-box support for JDK 11 LTS.<br>
+Java SE 8 update 60 is suggested as the minimum patch release for Java 8, but it is<br>
+generally recommended to use a recent patch release.</p>
+<p>Spring使得Java企业应用开发变得简单。它提供了在企业环境中使用Java语言所需要的一切并且可以根据应用的需求灵活的构建多种架构，同时也支持Groovy和Kotlin这些基于JVM使用的替代语言。从Spring框架5.1开始，使用Spring需要JDK8+（Java SE 8+）版本并且也提供了对JDK11 LTS版本的支持。建议将Java SE8第60个更新版本作为使用Java8的最小修订版本，但是通常推荐使用最新修订版。</p>
+<p>Spring supports a wide range of application scenarios. In a large enterprise, applications<br>
+often exist for a long time and have to run on a JDK and application server whose upgrade<br>
+cycle is beyond developer control. Others may run as a single jar with the server embedded,<br>
+possibly in a cloud environment. Yet others may be standalone applications (such as batch<br>
+or integration workloads) that do not need a server.</p>
+<p>Spring支持广泛的应用场景。在大型企业中，通常应用程序是长时间存在并且运行在一个更新周期不受开发人员控制的JDK和应用服务器上。其他的可能就是运行在内嵌服务器或者云环境上的一个独立jar。还有一些可能就是不需要服务器的独立应用程序(比如批处理或者集成负载)。</p>
+<p>Spring is open source. It has a large and active community that provides continuous feedback<br>
+based on a diverse range of real-world use cases. This has helped Spring to successfully<br>
+evolve over a very long time.</p>
+<p>Spring是开源项目，它拥有一个庞大且活跃的社区，并且能够从各种实际使用案例中得到持续的反馈。这也是在Spring在长期发展中走向成功的原因。</p>
+<h2 id="what-we-mean-by-spring">What We Mean by &quot;Spring&quot;</h2>
+<h2 id="我们所说的spring是什么">我们所说的“Spring”是什么？</h2>
+<p>The term &quot;Spring&quot; means different things in different contexts. It can be used to refer to<br>
+the Spring Framework project itself, which is where it all started. Over time, other Spring<br>
+projects have been built on top of the Spring Framework. Most often, when people say<br>
+&quot;Spring&quot;, they mean the entire family of projects. This reference documentation focuses on<br>
+the foundation: the Spring Framework itself.</p>
+<p>“Spring”一词在不同的上下中代表的含义不尽相同。它可以代表着Spring Framework项目本身，也可以说是它一切的开始。随着时间的推移，也有很多其他的Spring项目在Spring Framework基础上开发出来。通常人们所说的“Spring”代表的是整个项目系列。本参考文档重点关注的是Spring框架自身。</p>
+<p>The Spring Framework is divided into modules. Applications can choose which modules they need.<br>
+At the heart are the modules of the core container, including a configuration model and a<br>
+dependency injection mechanism. Beyond that, the Spring Framework provides foundational<br>
+support for different application architectures, including messaging, transactional data and<br>
+persistence, and web. It also includes the Servlet-based Spring MVC web framework and, in<br>
+parallel, the Spring WebFlux reactive web framework.</p>
+<p>Spring框架被分成了多个模块，应用程序可以在使用时选择他们所需要的模块。核心容器的核心模块包含配置模式以及依赖注入机制。除此之外，Spring框架还提供了对不同应用架构的功能支持，包括消息传递、数据事务和持久化以及WEB。它还包含了基于Servlet的SpringMVC Web框架以及与之并行存在Spring WebFlux响应式Web框架。</p>
+<p>A note about modules: Spring's framework jars allow for deployment to JDK 9's module path<br>
+(&quot;Jigsaw&quot;). For use in Jigsaw-enabled applications, the Spring Framework 5 jars come with<br>
+&quot;Automatic-Module-Name&quot; manifest entries which define stable language-level module names<br>
+(&quot;spring.core&quot;, &quot;spring.context&quot; etc) independent from jar artifact names (the jars follow<br>
+the same naming pattern with &quot;-&quot; instead of &quot;.&quot;, e.g. &quot;spring-core&quot; and &quot;spring-context&quot;).<br>
+Of course, Spring's framework jars keep working fine on the classpath on both JDK 8 and 9+.</p>
+<p>关于模块化注意点：Spring框架支持部署到JDK9的模块化路径(&quot;Jigsaw&quot;)。为了在启用Jigsaw的应用程序中使用，在Spring5的jar中加入了“Automatic-Module-Name”清单列表用于定义独立于jar包名（这些jar遵循着相同的命名模式：使用“-”代替“.”,如：&quot;spring-core&quot;和&quot;spring-context&quot;）的标准语言级别的模块化名称（比如&quot;spring.core&quot;和&quot;spring.context&quot;）。当然，Spring框架jar在JDK8和JDK9+类路径上很好的运行。</p>
+<h2 id="design-philosophy">Design Philosophy</h2>
+<h2 id="设计原理">设计原理</h2>
+<p>When you learn about a framework, it’s important to know not only what it does but what<br>
+principles it follows. Here are the guiding principles of the Spring Framework:</p>
+<p>当学习一个框架时，很重要的一点是不仅要了解它的原理也要遵循它的设计原则。以下是Spring框架的指导原则。</p>
+<ul>
+<li>
+<p>Provide choice at every level. Spring lets you defer design decisions as late as possible.<br>
+For example, you can switch persistence providers through configuration without changing<br>
+your code. The same is true for many other infrastructure concerns and integration with<br>
+third-party APIs.</p>
+</li>
+<li>
+<p>Accommodate diverse perspectives. Spring embraces flexibility and is not opinionated<br>
+about how things should be done. It supports a wide range of application needs with<br>
+different perspectives.</p>
+</li>
+<li>
+<p>Maintain strong backward compatibility. Spring’s evolution has been carefully managed<br>
+to force few breaking changes between versions. Spring supports a carefully chosen range<br>
+of JDK versions and third-party libraries to facilitate maintenance of applications and<br>
+libraries that depend on Spring.</p>
+</li>
+<li>
+<p>Care about API design. The Spring team puts a lot of thought and time into making APIs<br>
+that are intuitive and that hold up across many versions and many years.</p>
+</li>
+<li>
+<p>Set high standards for code quality. The Spring Framework puts a strong emphasis on<br>
+meaningful, current, and accurate javadoc. It is one of very few projects that can claim<br>
+clean code structure with  no circular dependencies between packages.</p>
+</li>
+<li>
+<p>提供各个级别的选择。Spring使你尽可能的推迟你的设计决策。比如：你可以在不改变代码的情况通过切换配置提供功能的持久化。对于许多其他的基础架构问题以及与第三方API集成也是一样的。</p>
+</li>
+<li>
+<p>多角度兼容。Spring具有灵活性且不去限制你该怎么去做，支持具有不同视角的广泛应用需求。</p>
+</li>
+<li>
+<p>强大的向后兼容性。Spring的演变是被精心管理的，所有版本之间没有重大的变化。Spring支持精心选择的JDK版本以及第三方库，以方便维护依赖于Spring的应用和第三方库。</p>
+</li>
+<li>
+<p>重视API设计。Spring团队在设计API上投入了大量的思考和时间，使其能够容易理解以及能够在多版本中长久的支持。</p>
+</li>
+<li>
+<p>高标准的代码质量。Spring框架强调javadoc要有意义、保持最新以及含义准确。Spring框架可以自豪的说，它是极少具有代码结构简洁并且包之间没有循环依赖的项目之一。</p>
+</li>
+</ul>
+<h2 id="feedback-and-contributions">Feedback and Contributions</h2>
+<h2 id="反馈与贡献">反馈与贡献</h2>
+<p>For how-to questions or diagnosing or debugging issues, we suggest using StackOverflow,<br>
+and we have a https://spring.io/questions[questions page] that lists the suggested tags to use.<br>
+If you're fairly certain that there is a problem in the Spring Framework or would like<br>
+to suggest a feature, please use the https://github.com/spring-projects/spring-framework/issues[GitHub Issues].</p>
+<p>对于如何提问、诊断以及调试之类的问题，我们建议使用StackOverflow，以及我们的 https://spring.io/questions[问题页面] 列出了一些使用建议标签。如果你非常确定Spring框架存在问题或者你想提出一些新功能，请到 https://github.com/spring-projects/spring-framework/issues[GitHub Issues]反馈。</p>
+<p>If you have a solution in mind or a suggested fix, you can submit a pull request on<br>
+https://github.com/spring-projects/spring-framework[Github]. However, please keep in mind<br>
+that, for all but the most trivial issues, we expect a ticket to be filed in the issue<br>
+tracker, where discussions take place and leave a record for future reference.</p>
+<p>如果您有解决方案或者建议的解决方案，你可以到 https://github.com/spring-projects/spring-framework[Github]提交你的需求。但是请记住，除了一些琐碎的问题，我们希望将问题的讨论记录在问题追踪中，以备将来作参考。</p>
+<p>For more details see the guidelines at the<br>
+https://github.com/spring-projects/spring-framework/blob/master/CONTRIBUTING.md[CONTRIBUTING],<br>
+top-level project page.</p>
+<p>有关更多的详细信息，请参考顶级项目页面的指南 https://github.com/spring-projects/spring-framework/blob/master/CONTRIBUTING.md[CONTRIBUTING]。</p>
+<h2 id="getting-started">Getting Started</h2>
+<h2 id="入门">入门</h2>
+<p>If you are just getting started with Spring, you may want to begin using the Spring<br>
+Framework by creating a https://projects.spring.io/spring-boot/[Spring Boot]-based<br>
+application. Spring Boot provides a quick (and opinionated) way to create a<br>
+production-ready Spring-based application. It is based on the Spring Framework, favors<br>
+convention over configuration, and is designed to get you up and running as quickly<br>
+as possible.</p>
+<p>如果你刚刚开始使用Spring，你可能需要使用基于 https://projects.spring.io/spring-boot/[Spring Boot]来创建一个Spring项目。Spring Boot提供了一个快速（且便捷）的方式来构建一个基于Spring的生产应用。它基于Spring框架并且旨在让你能够快速上手运行一个项目，更倾向于约定优于配置。</p>
+<p>You can use https://start.spring.io/[start.spring.io] to generate a basic project or follow<br>
+one of the https://spring.io/guides[&quot;Getting Started&quot; guides], such as<br>
+https://spring.io/guides/gs/rest-service/[Getting Started Building a RESTful Web Service].<br>
+As well as being easier to digest, these guides are very task focused, and most of them<br>
+are based on Spring Boot. They also cover other projects from the Spring portfolio that<br>
+you might want to consider when solving a particular problem.</p>
+<p>你可以使用 https://start.spring.io/[start.spring.io] 生成一个基础项目工程或者根据以下指南 https://spring.io/guides[&quot;Getting Started&quot; guides]操作，比如： https://spring.io/guides/gs/rest-service/[Getting Started Building a RESTful Web Service]。这些指南大多数是基于Spring Boot开发的，非常注重操作并且易于上手。他们还包含了Spring工程系列中的其他项目，你在解决问题可能需要考虑到他们。</p>
+
+            </div>
+          </article>
+        </div>
+        <div class="paper" data-aos="fade-in">
+          
+            <div class="next-post">
+              <div class="next">
+                下一篇
+              </div>
+              <a href="https://nicholas2015.github.io/post/mysql-mian-an-zhuang-ban-pei-zhi-yu-an-zhuang/">
+                <h3 class="post-title">
+                  mysql免安装版配置与安装
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+        
+      </div>
+
+      <div class="sm-12 md-4 col sidebar">
+  <div class="paper info-container">
+    <img src="https://nicholas2015.github.io/images/avatar.png?v=1583553178302" class="no-responsive avatar">
+    <div class="text-muted">永不言弃<br>从来没有真正的绝境，只有心灵的迷途</div>
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      最新文章
+    </div>
+    <div class="row">
+      <ul>
+        
+          
+            <li>
+              <a href="https://nicholas2015.github.io/post/git-ben-di-xiang-mu-shang-chuan/">git本地项目上传</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://nicholas2015.github.io/post/spring-kuang-jia-jian-jie/">Spring框架简介</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://nicholas2015.github.io/post/mysql-mian-an-zhuang-ban-pei-zhi-yu-an-zhuang/">mysql免安装版配置与安装</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://nicholas2015.github.io/post/kubernetes-huan-jing-da-jian/">kubernetes环境搭建</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://nicholas2015.github.io/post/about/">关于</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://nicholas2015.github.io/post/hello-gridea/">Hello Gridea</a>
+            </li>
+          
+        
+      </ul>
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      标签列表
+    </div>
+    <div class="row">
+      
+        <a href="https://nicholas2015.github.io/tag/SDIfaskaa/" class="badge secondary">
+          工具
+        </a>
+      
+        <a href="https://nicholas2015.github.io/tag/aNlLOlDIh/" class="badge secondary">
+          Spring
+        </a>
+      
+        <a href="https://nicholas2015.github.io/tag/dI3XRiEcD/" class="badge secondary">
+          数据库
+        </a>
+      
+        <a href="https://nicholas2015.github.io/tag/QetU0dPRv/" class="badge success">
+          kubernetes
+        </a>
+      
+        <a href="https://nicholas2015.github.io/tag/jWoHBn4bW/" class="badge success">
+          Gridea
+        </a>
+      
+    </div>
+  </div>
+  <div class="paper">
+    Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://nicholas2015.github.io/atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
+
+
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+</script>
+
+
+
+
+  </body>
+</html>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>Hello Gridea | 尼古拉斯的博客</title>
+<title>git本地项目上传 | 尼古拉斯的博客</title>
 <meta name="description" content="永不言弃&lt;br&gt;从来没有真正的绝境，只有心灵的迷途">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -81,45 +81,59 @@
       <div class="sm-12 md-8 col">
         <div class="paper">
           <article class="article">
-            <h1>Hello Gridea</h1>
+            <h1>git本地项目上传</h1>
             <p class="article-meta">
-              2018-12-12
+              2020-03-07
               
-                <a href="https://nicholas2015.github.io/tag/jWoHBn4bW/" class="badge secondary">
-                  Gridea
+                <a href="https://nicholas2015.github.io/tag/SDIfaskaa/" class="badge secondary">
+                  工具
                 </a>
               
             </p>
             
-              <img src="https://nicholas2015.github.io/post-images/hello-gridea.png" alt="Hello Gridea">
-            
             <div class="post-content">
-              <p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-<!-- more -->
-<p><a href="https://github.com/getgridea/gridea">Github</a><br>
-<a href="https://gridea.dev/">Gridea 主页</a><br>
-<a href="http://fehey.com/">示例网站</a></p>
-<h2 id="特性">特性👇</h2>
-<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
-<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
-<p>🏷️  你可以对文章进行标签分组</p>
-<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
-<p>💻  你可以在 <strong>Windows</strong>，<strong>MacOS</strong> 或 <strong>Linux</strong> 设备上使用此客户端</p>
-<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
-<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
-<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
-<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
-<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
-<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前 🏃</p>
-<p>未来，它一定会成为你离不开的伙伴</p>
-<p>尽情发挥你的才华吧！</p>
-<p>😘 Enjoy~</p>
+              <p>1、（先进入项目文件夹）通过命令 git init 把这个目录变成git可以管理的仓库</p>
+<pre><code class="language-bash">git init
+</code></pre>
+<p>2、把文件添加到版本库中，使用命令 git add .添加到暂存区里面去，不要忘记后面的小数点“.”，意为添加文件夹下的所有文件</p>
+<pre><code class="language-bash">git add .
+</code></pre>
+<p>3、用命令 git commit告诉Git，把文件提交到仓库。引号内为提交说明</p>
+<pre><code class="language-bash">git commit -m 'first commit'
+</code></pre>
+<p>4、关联到远程库</p>
+<pre><code class="language-bash">git remote add origin 你的远程库地址
+</code></pre>
+<p>如：</p>
+<pre><code class="language-bash">git remote add origin https://github.com/xxx/xxx-demo.git
+</code></pre>
+<p>5、获取远程库与本地同步合并（如果远程库不为空必须做这一步，否则后面的提交会失败）</p>
+<pre><code class="language-bash">git pull --rebase origin master
+</code></pre>
+<p>6、把本地库的内容推送到远程，使用 git push命令，实际上是把当前分支master推送到远程。执行此命令后会要求输入用户名、密码，验证通过后即开始上传。</p>
+<pre><code class="language-bash">git push -u origin master
+</code></pre>
+<p>7、状态查询命令</p>
+<pre><code class="language-bash">git status
+</code></pre>
+<p>备：详细请参考 http://www.cnblogs.com/tugenhua0707/p/4050072.html<br>
+<img src="https://images2018.cnblogs.com/blog/359884/201711/359884-20171128123923050-1074438610.png" alt="img" loading="lazy"></p>
 
             </div>
           </article>
         </div>
         <div class="paper" data-aos="fade-in">
+          
+            <div class="next-post">
+              <div class="next">
+                下一篇
+              </div>
+              <a href="https://nicholas2015.github.io/post/spring-kuang-jia-jian-jie/">
+                <h3 class="post-title">
+                  Spring框架简介
+                </h3>
+              </a>
+            </div>
           
         </div>
         
@@ -195,7 +209,7 @@
     </div>
     <div class="row">
       
-        <a href="https://nicholas2015.github.io/tag/SDIfaskaa/" class="badge warning">
+        <a href="https://nicholas2015.github.io/tag/SDIfaskaa/" class="badge secondary">
           工具
         </a>
       
@@ -203,7 +217,7 @@
           Spring
         </a>
       
-        <a href="https://nicholas2015.github.io/tag/dI3XRiEcD/" class="badge success">
+        <a href="https://nicholas2015.github.io/tag/dI3XRiEcD/" class="badge ">
           数据库
         </a>
       
@@ -211,7 +225,7 @@
           kubernetes
         </a>
       
-        <a href="https://nicholas2015.github.io/tag/jWoHBn4bW/" class="badge warning">
+        <a href="https://nicholas2015.github.io/tag/jWoHBn4bW/" class="badge ">
           Gridea
         </a>
       
