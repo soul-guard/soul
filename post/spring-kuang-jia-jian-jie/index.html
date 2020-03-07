@@ -1,52 +1,113 @@
 <html>
-      <head>
-        <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,initial-scale=1,user-scalable=no" />
-        <meta charset="utf-8">
-        <meta name="referrer" content="never">
-        <title>Spring框架简介 | 尼古拉斯的博客</title>
-        <link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.11.1/katex.min.css">
-        <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
-        <link rel="stylesheet" href="https://nicholas2015.github.io/styles/main.css">
-          <script src="https://nicholas2015.github.io/media/scripts/mdui.min.js"></script>
-        <link rel="stylesheet" href="https://at.alicdn.com/t/font_1306644_jwtuc2zzbrd.css">
-        <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Ma+Shan+Zheng&display=swap" rel="stylesheet">
-        <script src="https://cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js"></script>
-        <script src="https://nicholas2015.github.io/media/scripts/script.js"></script>
-        <script >hljs.initHighlightingOnLoad();</script>
-        
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Spring框架简介 | 尼古拉斯的博客</title>
+<meta name="description" content="永不言弃<br><br>从来没有真正的绝境，只有心灵的迷途" />
+<link rel="shortcut icon" href="https://nicholas2015.github.io/favicon.ico">
+<link rel="stylesheet" href="https://nicholas2015.github.io/styles/main.css">
 
-    </head>
-    <body class="mdui-theme-primary-purple mdui-theme-accent-purple">
-        <header class="index-img mdui-m-b-3"  style="background-image: url(https://nicholas2015.github.io/post-images/spring-kuang-jia-jian-jie.jpg);" >
-                          <button class="mdui-btn  mdui-btn-icon mdui-btn-dense mdui-color-theme-500 mdui-ripple yinying mdui-m-t-1 mdui-m-l-1" mdui-menu="{target: '#demo-attr-cascade'}"><i class="mdui-icon material-icons">&#xe5d2;</i></button>
-                <ul class="mdui-menu" id="demo-attr-cascade">
-                
-                        <li class="mdui-menu-item">
-                          <a href="/" class="mdui-ripple">首页</a>
-                        </li>
-                
-                        <li class="mdui-menu-item">
-                          <a href="/archives" class="mdui-ripple">归档</a>
-                        </li>
-                
-                        <li class="mdui-menu-item">
-                          <a href="/tags" class="mdui-ripple">标签</a>
-                        </li>
-                
-                        <li class="mdui-menu-item">
-                          <a href="/post/about" class="mdui-ripple">关于</a>
-                        </li>
-                
-                      </ul>
+<script src="https://nicholas2015.github.io/media/js/jquery.min.js"></script>
+<script src="https://nicholas2015.github.io/media/js/masonry.pkgd.min.js"></script>
+<script src="https://nicholas2015.github.io/media/js/aos.js"></script>
+<script src="https://nicholas2015.github.io/media/js/pace.min.js"></script>
+<script src="https://nicholas2015.github.io/media/js/view-image.min.js"></script>
+<script src="https://nicholas2015.github.io/media/js/jquery.magnific-popup.min.js"></script>
+<script src="https://nicholas2015.github.io/media/js/functions.js"></script>
+    <meta name="referrer" content="never">
+    <meta name="description" content="Spring Framework Overview
+Spring框架简介
+Spring makes it easy to create Java enterprise applications. It provides everything..." />
+    <meta name="keywords" content="Spring" />
+    <script src="https://nicholas2015.github.io/media/js/waterfall.min.js"></script>
+    <script src="https://nicholas2015.github.io/media/js/prism.min.js"></script>
+  </head>
+  <body>
+            <header id="header" class="grid-container">
+        <!-- start: .menu-wrapper -->
+        <div class="menu-mobile"> 
+          <i class="fa fa-reorder"></i>
+        </div>
+        <div class="menu-wrapper">
+          <div class="">
+            <div class="logo">
+              <a href="https://nicholas2015.github.io"><img src="" alt=""></a>
+            </div>
+            <!-- start: .main-nav -->
 
-        </header>
-        <div class="mdui-container post">
-                <div class="mdui-row">
-                        <div class="mdui-col-md-8 mdui-col-offset-md-2 ">
-                         <article class="mdui-shadow-10 mdui-p-a-2 post-list">
-                           <div class="mdui-typo-display-1 mdui-m-b-3">Spring框架简介</div>
-                           <a  class="index-list-biaoqian ">2020-02-07</a>
-                           <div class="mdui-typo mdui-m-t-3 post-neirong"><h1 id="spring-framework-overview">Spring Framework Overview</h1>
+            <nav class="main-nav grid-container grid-parent">
+              <ul id="menu-header" class="menu gradient-effect">
+                <li class=""><a href="https://nicholas2015.github.io" class="menu">首页</a></li>
+                
+                  <li class="" >
+                    <a href="/archives" class="menu">
+                      归档
+                    </a>
+                  </li>
+                
+                  <li class="" >
+                    <a href="/tags" class="menu">
+                      标签
+                    </a>
+                  </li>
+                
+                  <li class="" >
+                    <a href="/post/about" class="menu">
+                      关于
+                    </a>
+                  </li>
+                
+                <li class="search-menu-item hide-on-mobile hide-on-tablet"><a href="#search-lightbox" class="lightbox mfp-inline"><i class="fa fa-search-line"></i></a></li>
+              </ul>
+            </nav>
+            <a href="#search-lightbox" class="lightbox epcl-search-button mfp-inline hide-on-tablet hide-on-desktop"><i class="fa fa-search-line"></i></a>
+            <!-- end: .main-nav -->
+            <div class="clear"></div>
+            <div class="border hide-on-tablet hide-on-mobile"></div>
+          </div>    
+          <div class="clear"></div>
+        </div>
+        <!-- end: .menu-wrapper -->
+        <div class="clear"></div>
+      </header>
+      <div class="hide-on-mobile hide-on-tablet hide-on-desktop">
+        <div id="search-lightbox" class="grid-container grid-small grid-parent mfp-hide">
+          <div class="search-wrapper section">
+            <form id="gridea-search-form" data-update="1583568354489" action="/search/index.html" class="search-form" _lpchecked="1">
+              <input type="text" name="q" id="s" value="" class="search-field" placeholder="搜点啥..." aria-label="搜点啥..." required="">
+              <button type="submit" class="submit" aria-label="Submit">
+                <i class="fa fa-search-line"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
+
+        <div class="center content">
+          <div class="featured-image cover" style="background-image: url('https://nicholas2015.github.io/post-images/spring-kuang-jia-jian-jie.jpg');">
+            <div class="meta top"> 
+              <time class="meta-info" style="float:left;" datetime="2020-02-07"><i class="fa fa-calendar"></i><span class="lately">1 个月前</span></time>
+              
+            </div>
+            <div class="info">
+              <div class="tags ">
+                
+                      <a href="https://nicholas2015.github.io/tag/aNlLOlDIh/" class="ctag ctag-0 ctag-aNlLOlDIh" aria-label="">Spring</a>
+                    
+              </div>
+              <h1 class="title ularge white bold">Spring框架简介</h1>
+            </div>
+          </div>
+        </div>  
+
+        <div class="epcl-page-wrapper">
+          <div class="left-content grid-70 np-mobile">
+            <article class="main-article post">
+              <section class="post-content">
+                <div class="text">
+                  <h1 id="spring-framework-overview">Spring Framework Overview</h1>
 <h1 id="spring框架简介">Spring框架简介</h1>
 <p>Spring makes it easy to create Java enterprise applications. It provides everything you<br>
 need to embrace the Java language in an enterprise environment, with support for Groovy<br>
@@ -168,110 +229,181 @@ As well as being easier to digest, these guides are very task focused, and most 
 are based on Spring Boot. They also cover other projects from the Spring portfolio that<br>
 you might want to consider when solving a particular problem.</p>
 <p>你可以使用 https://start.spring.io/[start.spring.io] 生成一个基础项目工程或者根据以下指南 https://spring.io/guides[&quot;Getting Started&quot; guides]操作，比如： https://spring.io/guides/gs/rest-service/[Getting Started Building a RESTful Web Service]。这些指南大多数是基于Spring Boot开发的，非常注重操作并且易于上手。他们还包含了Spring工程系列中的其他项目，你在解决问题可能需要考虑到他们。</p>
-</div>
-                              <div class="mdui-divider mdui-m-t-3"></div>
-                              <div class="mdui-row-xs-2 mdui-m-t-2">
-  <div class="mdui-col"> </div>
- <div class="mdui-col"><div class="mdui-text-right "><a href="https://nicholas2015.github.io/post/hello-gridea/">Hello Gridea</a></div> </div>
-                                </div>
-                                <div class="mdui-divider mdui-m-t-2"></div>
-   
- <script src="https://nicholas2015.github.io/media/scripts/Valine.min.js"></script>
- <div class="comment"></div>
 
-<script>
-      new Valine({
-            el: '.comment',
+                </div>
+                <div class="clear"></div>
+              </section>
+            </article>
+            <div class="clear"></div>
 
+            <section class="related section">
+              
+              
+              <article class="next grid-50 tablet-grid-50 grid-parent">
+                <div class="thumb cover lazy loaded" style="background-image: url('https://nicholas2015.github.io/post-images/hello-gridea.png');"></div>
+                 <a href="https://nicholas2015.github.io/post/hello-gridea/" class="full-link"></a>
+                 <div class="info">
+                  <time datetime="2018-12-12">2018-12-12</time>
+                  <h4 class="title white no-margin">Hello Gridea</h4>
+                </div>
+                 <span class="epcl-button red">
+                  <img src="https://nicholas2015.github.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">
+                </span>
+                <div class="overlay"></div>
+              </article>
+              
 
+                <div class="clear"></div>
+            </section>
 
-            path: window.location.pathname,
-            pageSize: 30,
-            avatar:'mm', 
-       })
+              <div class="clear"></div>
+              
+            
+              <div id="comments" class="bg-white hosted ">
+                <p>请到客户端“主题--自定义配置--valine”中填入ID和KEY</p>
+              </div>
+              <div class="clear"></div>
+            
 
-    </script> 
-<script>
-    if(window.location.hash){
-        var checkExist = setInterval(function() {
-           if ($(window.location.hash).length) {
-              $('html, body').animate({scrollTop: $(window.location.hash).offset().top-90}, 1000);
-              clearInterval(checkExist);
-           }
-        }, 100);
-    }
-</script>
-                         </article>
-                 <div class="toc-container mdui-float-right">
-                <ul class="markdownIt-TOC">
-<li><a href="#spring-framework-overview">Spring Framework Overview</a></li>
-<li><a href="#spring%E6%A1%86%E6%9E%B6%E7%AE%80%E4%BB%8B">Spring框架简介</a>
-<ul>
-<li><a href="#what-we-mean-by-spring">What We Mean by &quot;Spring&quot;</a></li>
-<li><a href="#%E6%88%91%E4%BB%AC%E6%89%80%E8%AF%B4%E7%9A%84spring%E6%98%AF%E4%BB%80%E4%B9%88">我们所说的“Spring”是什么？</a></li>
-<li><a href="#design-philosophy">Design Philosophy</a></li>
-<li><a href="#%E8%AE%BE%E8%AE%A1%E5%8E%9F%E7%90%86">设计原理</a></li>
-<li><a href="#feedback-and-contributions">Feedback and Contributions</a></li>
-<li><a href="#%E5%8F%8D%E9%A6%88%E4%B8%8E%E8%B4%A1%E7%8C%AE">反馈与贡献</a></li>
-<li><a href="#getting-started">Getting Started</a></li>
-<li><a href="#%E5%85%A5%E9%97%A8">入门</a></li>
-</ul>
-</li>
-</ul>
+            </div>
+          </div>
+      </main>
 
+          <footer id="footer" class="grid-container">
+        <div class="widgets row gradient-effect">
+            <div class="default-sidebar border-effect">
+              <div class="grid-33 tablet-grid-50 mobile-grid-100">
+                <section id="tag_cloud-2" class="widget widget_epcl_posts_thumbs underline-effect">
+                  <h4 class="widget-title title white bordered">最新文章</h4>
+                  
+                  
+                  <article class="item post-0 post type-post status-publish format-standard has-post-thumbnail hentry">
+                    <a href="https://nicholas2015.github.io/post/spring-kuang-jia-jian-jie/" class="thumb hover-effect">
+                      <span class="fullimage cover" style="display:block;border-radius:50%;background-image: url('https://nicholas2015.github.io/post-images/spring-kuang-jia-jian-jie.jpg');"></span>
+                    </a>
+                    <div class="info gradient-effect">
+                      <time datetime="2020-02-07">2020-02-07</time>
+                      <h4 class="title usmall">
+                        <a href="https://nicholas2015.github.io/post/spring-kuang-jia-jian-jie/">Spring框架简介</a>
+                      </h4>
+                    </div>
+                    <div class="clear"></div>
+                  </article>
+                  
+                  
+                  
+                  <article class="item post-1 post type-post status-publish format-standard has-post-thumbnail hentry">
+                    <a href="https://nicholas2015.github.io/post/about/" class="thumb hover-effect">
+                      <span class="fullimage cover" style="display:block;border-radius:50%;background-image: url('');"></span>
+                    </a>
+                    <div class="info gradient-effect">
+                      <time datetime="2019-01-25">2019-01-25</time>
+                      <h4 class="title usmall">
+                        <a href="https://nicholas2015.github.io/post/about/">关于</a>
+                      </h4>
+                    </div>
+                    <div class="clear"></div>
+                  </article>
+                  
+                  
+                  
+                  <article class="item post-2 post type-post status-publish format-standard has-post-thumbnail hentry">
+                    <a href="https://nicholas2015.github.io/post/hello-gridea/" class="thumb hover-effect">
+                      <span class="fullimage cover" style="display:block;border-radius:50%;background-image: url('https://nicholas2015.github.io/post-images/hello-gridea.png');"></span>
+                    </a>
+                    <div class="info gradient-effect">
+                      <time datetime="2018-12-12">2018-12-12</time>
+                      <h4 class="title usmall">
+                        <a href="https://nicholas2015.github.io/post/hello-gridea/">Hello Gridea</a>
+                      </h4>
+                    </div>
+                    <div class="clear"></div>
+                  </article>
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  <div class="clear"></div>
+                </section>
               </div>
 
-                        </div>
-                 </div>
-          
-        </div>
-        <script data-no-instant>
-    (function ($) {
-        $.extend({
-            adamsOverload: function () {
-                $.viewImage({
-                    'target'  : '.post-neirong img',
-                    'exclude' : '.vsmile-icons img , .song-links-item img',
-                    'delay'   : 300
-                });
-            }
-        });
-    })(jQuery);
-    jQuery.adamsOverload();
-</script>
-        <footer class="footer mdui-m-t-5 mdui-text-center">
-               <nav class="social-links">
-                      <ul>
-                      
-                            
-                           
-                            
-                           
-                            
-                           
-                            
-                           
-                            
-                           
-                            
-                           
-                            
-                           
-                            
-                           
-                            
-                           
-                            
-                           
-                            
-                           
-                            
-                           
-                      </ul>
-                    </nav>
-                  <div class="copyright">
-                      <p>Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a></p>
+              <div class="grid-33 tablet-grid-50 mobile-grid-100">
+                <section id="tag_cloud-2" class="widget widget_tag_cloud underline-effect">
+                  <h4 class="widget-title title white bordered">标签云</h4>
+                  <div class="tagcloud">
+                    
+                      <a href="https://nicholas2015.github.io/tag/aNlLOlDIh/" class="ctag ctag-0 ctag-aNlLOlDIh" aria-label="">Spring</a>
+                    
+                      <a href="https://nicholas2015.github.io/tag/jWoHBn4bW/" class="ctag ctag-1 ctag-jWoHBn4bW" aria-label="">Gridea</a>
+                    
+                      <a href="https://nicholas2015.github.io/tag/QetU0dPRv/" class="ctag ctag-2 ctag-QetU0dPRv" aria-label="">kubernetes</a>
+                    
+                      <a href="https://nicholas2015.github.io/tag/SDIfaskaa/" class="ctag ctag-3 ctag-SDIfaskaa" aria-label="">工具</a>
+                    
+                      <a href="https://nicholas2015.github.io/tag/dI3XRiEcD/" class="ctag ctag-4 ctag-dI3XRiEcD" aria-label="">数据库</a>
+                    
                   </div>
-              </footer>
-    </body>
+                  <div class="clear"></div>
+                </section>
+              </div>
+
+              <div class="grid-33 tablet-grid-50 mobile-grid-100">
+                <section id="epcl_about-2" class="widget widget_epcl_about underline-effect">
+                  <h4 class="widget-title title white bordered">关于我</h4>
+                  <div class="avatar">
+                    <a href="" class="translate-effect thumb"><span class="fullimage cover" style="background-image: url(https://nicholas2015.github.io/images/avatar.png);"></span></a>
+                  </div>
+                  <div class="info">
+                    <h4 class="title small author-name gradient-effect no-margin"><a href="">尼古拉斯的博客</a></h4>
+                    <p class="founder">永不言弃&lt;br&gt;&lt;br&gt;从来没有真正的绝境，只有心灵的迷途</p>
+                    <div class="social">
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                    </div> 
+                  </div>
+                  <div class="clear"></div>
+                  </section>
+              </div>
+
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <div class="logo">
+          <a href="https://nicholas2015.github.io"><img src="" alt=""></a>
+        </div>
+        <p class="published border-effect">
+          ©2019 共 6 篇文章
+          <br/>
+          Theme <a href="https://gridea.dev/" target="_blank">「breek」</a> Powered by <a href="https://gridea.dev/" target="_blank">「Gridea」</a>
+        </p>
+        
+        <a href="javascript:void(0)" id="back-to-top" class="epcl-button dark" style="display:none">
+          <i class="fa fa-arrow"></i>
+        </a>
+    </footer>
+    
+    <div class="clear"></div>
+
+        
+
+      
+    <script src="https://nicholas2015.github.io/media/js/functions-post.js"></script>
+
+    </div>
+    <!-- end: #wrapper -->
+  </body>
 </html>
