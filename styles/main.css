@@ -3181,3 +3181,7 @@ ul {
     -webkit-line-clamp: 1;
   }
 }
+
+    .header {background-image: url(https://cdn.jsdelivr.net/gh/Alanrk/clean-cdn@1.1/images/home-bg.jpg);}
+    .index-img{ background-image: url(https://cdn.jsdelivr.net/gh/Alanrk/clean-cdn@1.1/images/home-bg.jpg);}
+    
