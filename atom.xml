@@ -1,54 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://nicholas2015.github.io</id>
-    <title>尼古拉斯的博客</title>
-    <updated>2020-03-07T08:10:05.451Z</updated>
+    <id>https://soul-guard.github.io</id>
+    <title>守护心灵的家园</title>
+    <updated>2020-03-13T14:19:30.386Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://nicholas2015.github.io"/>
-    <link rel="self" href="https://nicholas2015.github.io/atom.xml"/>
-    <subtitle>永不言弃&lt;br&gt;&lt;br&gt;从来没有真正的绝境，只有心灵的迷途</subtitle>
-    <logo>https://nicholas2015.github.io/images/avatar.png</logo>
-    <icon>https://nicholas2015.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2020, 尼古拉斯的博客</rights>
-    <entry>
-        <title type="html"><![CDATA[Spring框架简介]]></title>
-        <id>https://nicholas2015.github.io/post/spring-kuang-jia-jian-jie/</id>
-        <link href="https://nicholas2015.github.io/post/spring-kuang-jia-jian-jie/">
-        </link>
-        <updated>2020-02-07T03:51:07.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>https://nicholas2015.github.io/post/hello-gridea/</id>
-        <link href="https://nicholas2015.github.io/post/hello-gridea/">
-        </link>
-        <updated>2018-12-11T16:00:00.000Z</updated>
-        <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[kubernetes环境搭建]]></title>
-        <id>https://nicholas2015.github.io/post/kubernetes-huan-jing-da-jian/</id>
-        <link href="https://nicholas2015.github.io/post/kubernetes-huan-jing-da-jian/">
-        </link>
-        <updated>2018-05-07T03:37:36.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[git本地项目上传]]></title>
-        <id>https://nicholas2015.github.io/post/git-ben-di-xiang-mu-shang-chuan/</id>
-        <link href="https://nicholas2015.github.io/post/git-ben-di-xiang-mu-shang-chuan/">
-        </link>
-        <updated>2018-02-07T03:51:59.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[mysql免安装版配置与安装]]></title>
-        <id>https://nicholas2015.github.io/post/mysql-mian-an-zhuang-ban-pei-zhi-yu-an-zhuang/</id>
-        <link href="https://nicholas2015.github.io/post/mysql-mian-an-zhuang-ban-pei-zhi-yu-an-zhuang/">
-        </link>
-        <updated>2017-07-16T03:42:31.000Z</updated>
-    </entry>
+    <link rel="alternate" href="https://soul-guard.github.io"/>
+    <link rel="self" href="https://soul-guard.github.io/atom.xml"/>
+    <subtitle>从来没有真正的绝境，只有心灵的迷途</subtitle>
+    <logo>https://soul-guard.github.io/images/avatar.png</logo>
+    <icon>https://soul-guard.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2020, 守护心灵的家园</rights>
 </feed>
