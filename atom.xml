@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://soul-guard.github.io</id>
     <title>守护心灵的家园</title>
-    <updated>2020-03-26T15:40:52.079Z</updated>
+    <updated>2020-03-26T15:44:11.180Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://soul-guard.github.io"/>
     <link rel="self" href="https://soul-guard.github.io/atom.xml"/>
@@ -10,6 +10,13 @@
     <logo>https://soul-guard.github.io/images/avatar.png</logo>
     <icon>https://soul-guard.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 守护心灵的家园</rights>
+    <entry>
+        <title type="html"><![CDATA[禅与摩托车维修艺术（2）]]></title>
+        <id>https://soul-guard.github.io/post/shan-yu-mo-tuo-che-wei-xiu-yi-zhu-2/</id>
+        <link href="https://soul-guard.github.io/post/shan-yu-mo-tuo-che-wei-xiu-yi-zhu-2/">
+        </link>
+        <updated>2020-03-26T15:43:49.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[禅与摩托车维修艺术（1）]]></title>
         <id>https://soul-guard.github.io/post/shan-yu-mo-tuo-che-wei-xiu-yi-zhu-1/</id>
